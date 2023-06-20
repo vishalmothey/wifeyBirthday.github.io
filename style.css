@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  /* background-color: #fdbf00; */
+  background-image: url(./pexels-ylanite-koppens-776635.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.card {
+  width: 640px;
+  height: 400px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+  transition: 1s;
+}
+.card:hover {
+  transform: rotate(-5deg);
+}
+.card:hover .outside {
+  transform: rotateY(-130deg);
+}
+.outside,
+.inside {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 50.1%;
+}
+.inside {
+  background: url(./20230417_165722.jpg);
+  background-size: cover;
+  line-height: 3;
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  left: 50%;
+}
+
+.inside:hover {
+  opacity: 0.7;
+}
+
+.outside {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transform-origin: left;
+  transition: 2s;
+  cursor: pointer;
+}
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+.front {
+  /* background-color: #ffffff; */
+  background-image: linear-gradient(to top, #fffbd5, #b20a2c);
+}
+.back {
+  transform: rotateY(180deg);
+  /* background: linear-gradient(to left, #e7e7e7, #ffffff 30%); */
+  background: url(./BG.jpg);
+  background-size: cover;
+  background-repeat: round;
+}
+.cake {
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+}
+.top-layer,
+.middle-layer,
+.bottom-layer {
+  height: 80px;
+  width: 240px;
+  background-repeat: repeat;
+  background-size: 60px 100px;
+  background-position: 28px 0;
+  background-image: linear-gradient(
+      transparent 50px,
+      #7B3F00 50px,
+      #7B3F00 60px,
+      transparent 60px
+    ),
+    radial-gradient(circle at 30px 5px, #0c837d 30px, #E0FFFF 31px);
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  margin: auto;
+  /* border: 2px solid #1d1d1d; */
+}
+.middle-layer {
+  transform: scale(0.85);
+  top: 6px;
+}
+.top-layer {
+  transform: scale(0.7);
+  top: 26px;
+}
+.candle {
+  height: 45px;
+  width: 15px;
+  background: repeating-linear-gradient(
+    45deg,
+    #fd3018 0,
+    #fd3018 5px,
+    #ffa89e 5px,
+    #ffa89e 10px
+  );
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 202px;
+}
+.candle:before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  background-color: #ffa500;
+  border-radius: 0 50% 50% 50%;
+  bottom: 48px;
+  transform: rotate(45deg);
+  left: -1px;
+}
+.outside p {
+  font-size: 23px;
+  text-transform: uppercase;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: 6px;
+  color: #000046;
+}
+.inside p {
+  font-size: 20px;
+  line-height: 70px;
+  color: azure;
+  text-shadow: 2px 5px 100px #1d1d1d;
+}
+
+
+@media screen and (max-width: 500px) {
+  body {
+    background: #E1A2B8;
+  }
+
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    /* border: 2px solid black; */
+    position: absolute;
+    width: 460px;
+    left: auto;
+    right: auto;
+  }
+
+  .outside, .inside, .front, .back {
+    border-radius: 10px;
+  }
+
+  .cake {
+    width: 40%;
+    position: absolute;
+    bottom: 20px;
+  }
+
+  .top-layer {
+    height: 76px;
+    width: 180px;
+    left: 25px;
+  }
+
+  .middle-layer {
+    height: 74px;
+    width: 185px;
+    left: 24px;
+  }
+
+  .bottom-layer {
+    height: 74px;
+    width: 190px;
+    left: 22px;
+  }
+
+  .candle {
+    bottom: 185px;
+    height: 30px;
+    left: 100px;
+  }
+
+  .candle:before {
+    bottom: 30px;
+  }
+
+
+  .inside p {
+    font-size: 15px;
+    line-height: 40px;
+    color: #f39200;
+    font-weight: bold;
+    width: 140px;
+    text-align: left;
+    text-shadow: 1px 1px 2px #000;
+  }
+
+  .vishu {
+    font-style: italic;
+    font-family: "Cedarville Cursive", serif;
+    color: #fff;
+  }
+}
